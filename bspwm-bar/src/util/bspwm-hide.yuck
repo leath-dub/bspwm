@@ -1,0 +1,2 @@
+(defwidget bspwm-hide []
+  (eventbox :cursor "pointer" :class "chevron" :onclick "sh ./scripts/bar-toggle" ""))

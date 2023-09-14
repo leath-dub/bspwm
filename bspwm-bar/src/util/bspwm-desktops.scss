@@ -1,0 +1,22 @@
+@use "../theme.scss";
+
+.desktop {
+  border-radius: 1rem;
+  &--occupied {
+    background-color: theme.$overlay;
+    min-height: 1.5rem;
+  }
+  &--current {
+    background-color: theme.$foam;
+    min-height: 2rem;
+  }
+  &--unoccupied {
+    background-color: theme.$surface;
+    min-height: 1rem;
+    min-width: 1rem;
+    border-radius: 100%;
+    &.desktop--current {
+      background-color: theme.$foam;
+    }
+  }
+}

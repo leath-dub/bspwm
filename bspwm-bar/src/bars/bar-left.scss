@@ -1,0 +1,12 @@
+@use "../theme.scss";
+
+.bar-left {
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+.bar-left > box {
+  border-radius: inherit;
+  padding: 3em .5rem 3em .5rem;
+  background-color: theme.$base;
+  color: theme.$text;
+}

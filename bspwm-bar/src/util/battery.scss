@@ -1,0 +1,33 @@
+@use "../theme.scss";
+
+.battery {
+  background-color: theme.$hi-med;
+  padding: 10px 0.3rem 8px 0.3rem;
+  border-radius: 0.3rem;
+}
+
+.battery-progress > trough {
+  background-color: inherit;
+  min-height: 24px;
+  min-width: 14px;
+  border-radius: 4px;
+  &> progress {
+    background-color: theme.$pine;
+    min-width: 8px;
+    border-radius: 0px 0px 4px 4px;
+    margin: 2px;
+    margin-bottom: 3px;
+  }
+  box-shadow: 0px -5px 0px -3px theme.$text, 2px -2px theme.$text inset, -2px -2px theme.$text inset, 2px 1px theme.$text inset, -2px 1px theme.$text inset;
+}
+
+.battery-full trough > progress {
+    border-radius: 4px 4px 4px 4px;
+}
+
+.battery-charging {
+  &* {
+    font-size: 1.2rem;
+  }
+  padding: 10px 0.3rem 2px 0.3rem;
+}

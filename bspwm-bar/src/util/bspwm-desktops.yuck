@@ -1,0 +1,6 @@
+(deflisten bspwm-state :initial "{}" "./scripts/bspwm-state")
+(defwidget desktops []
+  (box :orientation "v" :halign "center" :space-evenly false :spacing 10 :class "desktops"
+    (for desktop in {bspwm-state.desktops ?: "[]"}
+      (eventbox :onclick "bspc desktop -f ${desktop.id}"
+        (box :class "desktop ${bspwm-state.focusedDesktopId == desktop.id ? "desktop--current" : ""} ${desktop.root == "null" ? "desktop--unoccupied" : "desktop--occupied"}")))))

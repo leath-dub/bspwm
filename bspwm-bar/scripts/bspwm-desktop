@@ -1,0 +1,4 @@
+bspc query -T -d focused
+bspc subscribe node desktop | while read _; do
+    bspc query -T -d focused
+done

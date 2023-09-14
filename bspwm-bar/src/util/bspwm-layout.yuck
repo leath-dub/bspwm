@@ -1,0 +1,4 @@
+(deflisten bspwm-desktop "sh scripts/bspwm-desktop")
+(defwidget bspwm-layout []
+  (box :tooltip {bspwm-desktop.layout} (eventbox :halign "center" :class "bspwm-layout" "")))
+

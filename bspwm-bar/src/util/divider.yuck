@@ -1,0 +1,2 @@
+(defwidget divider [height]
+  (box :class "divider" :height height))

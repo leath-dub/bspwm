@@ -1,0 +1,8 @@
+(defpoll battery-charging :interval 10  "sh ./scripts/battery-charging")
+(defpoll battery-percent :interval 10 "sh ./scripts/battery")
+(defwidget battery []
+  (box
+    :class "battery ${battery-percent == "100" ? "battery-full" : ""} ${battery-charging ? "battery-charging" : ""}"
+    :orientation "v"
+    (progress :tooltip {battery-percent} :class "battery-progress" :flipped true :orientation {orientation} :halign "center" :value "${battery-percent}.0")
+    (label :visible {battery-charging} :text "")))

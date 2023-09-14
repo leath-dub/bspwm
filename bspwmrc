@@ -1,0 +1,69 @@
+#!/bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+bspc monitor eDP1 -d 1 2 3 4 5 6
+bspc monitor HDMI1 -d 1 2 3 4 5 6
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio           0.52
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+# theme
+bspc config focused_border_color   "#c4a7e7"
+bspc config active_border_color    "#c4a7e7"
+bspc config normal_border_color    "#1f1d2e"
+bspc config presel_feedback_color  "#9ccfd8"
+
+bspc rule -a scrcpy state=floating
+bspc rule -a Sign In - Google Accounts — Mozilla Firefox state=floating
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
+
+# Keyboard settings
+setxkbmap us
+
+# Wallpaper
+xwallpaper --zoom $HOME/Pictures/fox.jpg
+
+# Monitor
+xrandr --output eDP1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
+
+# Battery
+$HOME/.local/bin/batd.sh &
+
+# Dunst
+dunst &
+
+# For ssh
+# iw wlp2s0 set power_save off
+
+# vboox
+cd $HOME/personal/vboox/
+./run-vbooxd.sh NoteAir2
+
+nm-applet &
+
+# Compositor
+xcompmgr &
+
+bspc config left_padding 36
+$HOME/.local/bin/eww -c $HOME/.config/bspwm/bspwm-bar --restart open bar-left
+
+bspc subscribe node_state | while read -r _ _ _ _ state flag; do
+    if [ "$state" != "fullscreen" ]; then
+        continue
+    fi
+    if [ "$flag" == on ]; then
+        $HOME/.local/bin/eww -c $HOME/.config/bspwm/bspwm-bar close-all
+  else
+        $HOME/.local/bin/eww -c $HOME/.config/bspwm/bspwm-bar open bar-left
+    fi
+done &
+

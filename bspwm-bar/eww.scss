@@ -1,0 +1,17 @@
+@use "src/util/bspwm-desktops.scss";
+@use "src/util/bspwm-layout.scss";
+@use "src/util/divider.scss";
+@use "src/util/bspwm-hide.scss";
+@use "src/util/battery.scss";
+@use "src/bars/bar-left.scss";
+@use "src/theme.scss";
+
+* {
+  all: unset;
+  font-family: "Ubuntu";
+}
+
+tooltip {
+  background-color: theme.$hi-high;
+  color: theme.$base;
+}

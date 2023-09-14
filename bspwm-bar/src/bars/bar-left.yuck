@@ -1,0 +1,34 @@
+(include "src/util/bspwm-desktops.yuck")
+(include "src/util/bspwm-hide.yuck")
+(include "src/util/battery.yuck")
+(include "src/util/divider.yuck")
+(include "src/util/bspwm-layout.yuck")
+(include "src/util/time.yuck")
+
+; (defwidget bar-left []
+;   (box :orientation "v" :space-evenly true (desktops) (transform :rotate "275" :translate-x "-150%" :translate-y "-48.5%" (label :text "" :class "icon"))))
+
+(defwidget left []
+  (desktops))
+
+(defwidget center []
+  "")
+
+(defwidget right []
+  (box :orientation "v" :spacing 10 :space-evenly false :valign "end" (bspwm-hide) (time) (battery) (divider :height 2) (bspwm-layout)))
+
+(defwidget bar-left []
+  (centerbox :orientation "v" (left) (center) (right)))
+
+(defwindow bar-left
+  :monitor 0
+  :windowtype "dock"
+  :stacking "bg"
+  :geometry (geometry
+              :x "0%"
+              :y "0%"
+              :width "0%"
+              :height "85%"
+              :anchor "left center")
+  :wm-ignore false
+  (bar-left))

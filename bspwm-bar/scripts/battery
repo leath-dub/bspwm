@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sysfs_path="/sys/class/power_supply"
+
+count=0
+for battery in ${sysfs_path}/BAT*; do
+    tot=$(( tot + $(cat ${battery}/capacity) ))
+    count=$(( count + 1 ))
+done
+
+echo $(( tot / count ))
