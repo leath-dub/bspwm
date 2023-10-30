@@ -25,7 +25,8 @@
           description = "Derivation storing my bspwm configuration";
         };
       };
+    }) // {
       dest = "./.config/bspwm";
-    });
+    };
 }
 
