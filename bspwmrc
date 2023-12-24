@@ -21,6 +21,10 @@ bspc config presel_feedback_color  "#9ccfd8"
 
 bspc rule -a scrcpy state=floating
 bspc rule -a Sign In - Google Accounts — Mozilla Firefox state=floating
+
+# Bitwarden pop up
+bspc rule -a "Chromium:crx_nngceckbapebfimnlniiiahkandclblb" state=floating
+
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Chromium desktop='^2'
 # bspc rule -a mplayer2 state=floating
