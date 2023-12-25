@@ -42,7 +42,7 @@ xrandr --output eDP1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 
 # Compositor
 xcompmgr &
 
-bspc config left_padding 36
+bspc config left_padding 37
 eww -c $HOME/.config/bspwm/bspwm-bar --restart open bar-left
 
 ext=$(xinput list --id-only "/u/squeezeonein ortho5by12")
