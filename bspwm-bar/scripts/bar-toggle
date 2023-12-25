@@ -7,4 +7,4 @@ else
     bspc config left_padding 36
 fi
 
-$HOME/.local/bin/eww open -c "$HOME/.config/bspwm/bspwm-bar/" --toggle bar-left
+eww open -c "$HOME/.config/bspwm/bspwm-bar/" --toggle bar-left
