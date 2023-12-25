@@ -1,8 +1,7 @@
 #!/bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-bspc monitor eDP1 -d 1 2 3 4 5 6
-bspc monitor HDMI1 -d 1 2 3 4 5 6
+bspc monitor -d 1 2 3 4 5 6
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -35,31 +34,16 @@ bspc rule -a "Chromium:crx_nngceckbapebfimnlniiiahkandclblb" state=floating
 setxkbmap us
 
 # Wallpaper
-xwallpaper --zoom $HOME/Pictures/fox.jpg
+xwallpaper --zoom $HOME/Pictures/$(cat $HOME/Pictures/.wallpaper)
 
 # Monitor
 xrandr --output eDP1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
-
-# Battery
-$HOME/.local/bin/batd.sh &
-
-# Dunst
-dunst &
-
-# For ssh
-# iw wlp2s0 set power_save off
-
-# vboox
-cd $HOME/personal/vboox/
-./run-vbooxd.sh NoteAir2
-
-nm-applet &
 
 # Compositor
 xcompmgr &
 
 bspc config left_padding 36
-$HOME/.local/bin/eww -c $HOME/.config/bspwm/bspwm-bar --restart open bar-left
+eww -c $HOME/.config/bspwm/bspwm-bar --restart open bar-left
 
 ext=$(xinput list --id-only "/u/squeezeonein ortho5by12")
 int=$(xinput list --id-only "AT Translated Set 2 keyboard")
