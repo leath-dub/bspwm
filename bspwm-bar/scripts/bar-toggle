@@ -1,10 +1,10 @@
 #!/bin/sh
 
 curr=$(bspc config left_padding)
-if [ "$curr" -eq "37" ]; then
+if [ "$curr" -eq "36" ]; then
     bspc config left_padding 0
 else
-    bspc config left_padding 37
+    bspc config left_padding 36
 fi
 
 eww open -c "$HOME/.config/bspwm/bspwm-bar/" --toggle bar-left
