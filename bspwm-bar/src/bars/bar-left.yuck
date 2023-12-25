@@ -28,7 +28,7 @@
               :x "0%"
               :y "0%"
               :width "0%"
-              :height "85%"
+              :height "100%"
               :anchor "left center")
   :wm-ignore false
   (bar-left))
