@@ -2,11 +2,11 @@
 
 .chevron {
   font-size: 2rem;
-  background-color: theme.$hi-med;
+  background-color: theme.$base05;
   border-radius: 0.6rem;
   transition: background 0.3s ease;
   &:hover {
-    background-color: theme.$hi-high;
+    background-color: theme.$base04;
   }
 }
 

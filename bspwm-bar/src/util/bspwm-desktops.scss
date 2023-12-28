@@ -3,20 +3,20 @@
 .desktop {
   border-radius: 1rem;
   &--occupied {
-    background-color: theme.$overlay;
+    background-color: theme.$base05;
     min-height: 1.5rem;
   }
   &--current {
-    background-color: theme.$foam;
+    background-color: theme.$base0C;
     min-height: 2rem;
   }
   &--unoccupied {
-    background-color: theme.$surface;
+    background-color: theme.$base06;
     min-height: 1rem;
     min-width: 1rem;
     border-radius: 100%;
     &.desktop--current {
-      background-color: theme.$foam;
+      background-color: theme.$base0C;
     }
   }
 }

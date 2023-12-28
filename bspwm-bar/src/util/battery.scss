@@ -1,7 +1,7 @@
 @use "../theme.scss";
 
 .battery {
-  background-color: theme.$hi-med;
+  background-color: theme.$base05;
   padding: 10px 0.3rem 8px 0.3rem;
   border-radius: 0.6rem;
 }
@@ -12,13 +12,13 @@
   min-width: 14px;
   border-radius: 4px;
   &> progress {
-    background-color: theme.$pine;
+    background-color: theme.$base0B;
     min-width: 8px;
     border-radius: 0px 0px 4px 4px;
     margin: 2px;
     margin-bottom: 3px;
   }
-  box-shadow: 0px -5px 0px -3px theme.$text, 2px -2px theme.$text inset, -2px -2px theme.$text inset, 2px 1px theme.$text inset, -2px 1px theme.$text inset;
+  box-shadow: 0px -5px 0px -3px theme.$base00, 2px -2px theme.$base00 inset, -2px -2px theme.$base00 inset, 2px 1px theme.$base00 inset, -2px 1px theme.$base00 inset;
 }
 
 .battery-full trough > progress {
