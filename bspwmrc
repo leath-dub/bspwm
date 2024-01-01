@@ -50,6 +50,5 @@ int=$(xinput list --id-only "AT Translated Set 2 keyboard")
 [ -n "$ext" ] && setxkbmap -device "$ext" us
 [ -n "$int" ] && setxkbmap -device "$int" ie -option caps:swapescape
 
-xsetroot -cursor_name left_ptr
-
 xrdb -merge ~/.Xresources
+xsetroot -cursor_name left_ptr
